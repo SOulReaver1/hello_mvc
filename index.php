@@ -7,10 +7,9 @@ session_start();
 
 // on récupère l'url
 $url = $_SERVER["REQUEST_URI"];
-
 // on récupère le path
 $path = parse_url($url, PHP_URL_PATH);
-
+$path = str_replace("/ZamorPhp/hello_mvc", "", $path);
 @list($null, $controller, $action) = explode("/", $path);
 
 $controller = !empty($controller) ? $controller : "main";

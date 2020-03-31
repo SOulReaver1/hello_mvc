@@ -23,11 +23,8 @@ function ingredient_add_one($pdo, $recette_id,
                           recette_id = :recette_id
                   ";
   $stmt = $pdo->prepare($q);
-  $stmt->execute([":name" => $name,
-                  ":quantity" => $quantity,
-                  ":unit" => $unit,
-                  ":recette_id" => $recette_id
-                  ]);
+  $stmt->execute([":name" => $name, ":quantity" => $quantity, ":unit" => $unit,
+  ":recette_id" => $recette_id]);
   $id = $pdo->lastInsertId();
   return $id;
 }

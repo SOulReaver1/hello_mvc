@@ -3,6 +3,7 @@
 /**************
  * MAIN CONTROLLER
  *************/
-
-include("views/main-index.php");
+if($action == "index"){  
+    include("views/main-index.php");
+}
 
